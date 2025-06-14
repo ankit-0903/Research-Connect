@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "devops-rg-test-2"
+  name     = "devops-rg-test-3"
   location = "Canada Central"
 }
 
@@ -25,7 +25,7 @@ resource "azurerm_service_plan" "plan" {
 }
 
 resource "azurerm_linux_web_app" "app" {
-  name                = "devops-alum-connect"
+  name                = "devops-alum-connect-ankit"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   service_plan_id     = azurerm_service_plan.plan.id
