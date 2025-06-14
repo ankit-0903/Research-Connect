@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || "Alum Connect" %></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <img src="images/Logo.png" alt="Alum Connect Logo" class="logo">
+            <div class="nav-links">
+                <a href="/login" class="login-btn">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Connect with Your Alumni Network</h1>
+                <p>Stay connected with your alma mater and fellow graduates through our comprehensive alumni management platform.</p>
+                <button class="cta-button" onclick="window.location.href='/login'">Get Started</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/landing.svg" alt="Graduates illustration">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose AlumConnect?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="icons/Networking.svg" alt="Network icon">
+                    <h3>Network Building</h3>
+                    <p>Connect with alumni across different graduating years and industries.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="icons/Event.svg" alt="Events icon">
+                    <h3>Event Management</h3>
+                    <p>Organize and participate in alumni events, reunions, and workshops.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="icons/AlumniBrain.svg" alt="Directory icon">
+                    <h3>Alumni Directory</h3>
+                    <p>Access a comprehensive directory of alumni profiles and contact information.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/Logo.png" alt="Alum Connect Logo" class="logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/privacy">Privacy Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <%= new Date().getFullYear() %> AlumConnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- <script src="public/js/main.js"></script> -->
+</body>
+</html>

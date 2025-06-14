@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Alumni Information</title>
+    <link rel="stylesheet" href="css/updateAlumini.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Update Your Alumni Information</h2>
+        <div id="error-message" class="error-message"></div>
+        <form id="update-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required />
+
+            <label for="status">Status</label>
+            <input type="text" id="status" name="status" required />
+
+            <button type="submit" id="update-button">Update</button>
+        </form>
+    </div>
+    <script src="/js/updateAlumini.js"></script>
+</body>
+</html>

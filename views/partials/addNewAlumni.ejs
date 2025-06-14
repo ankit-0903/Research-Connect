@@ -1,0 +1,114 @@
+<div class="container">
+    <h2 class="content-title">Add New Alumni</h2>
+    <form class="alumini-form" id="alumini-form" method="POST" action="/settings/addNewAlumini">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fullname">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Please enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="usn">USN </label>
+                <input type="text" id="usn" name="usn" placeholder="Please enter your USN (1BYXXXXXX)">
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Please enter the Email">
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Please enter your current company">
+            </div>
+            <div class="form-group">
+                <label for="batch">Batch</label>
+                <input type="number" id="batch" name="batch" placeholder="Please enter your Batch">
+            </div>
+       
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status">
+                    <option value="status" disabled>Status</option>
+                    <option value="Placed">Placed</option>
+                    <option value="Entrepreneur">Entrepreneur</option>
+                    <option value="Higher Studies">Higher Studies</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+            <button type="button" class="btn btn-reset">Reset</button>
+        </div>
+    </form>
+    <div id="messageAlumini"></div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const alumniForm = document.getElementById('alumini-form');
+        const messageElement = document.getElementById('messageAlumini'); // Reference to the message container
+
+        if (alumniForm) {
+            alumniForm.addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const submitButton = this.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Submitting...';
+
+                // Clear previous messages
+                messageElement.textContent = '';
+                messageElement.className = '';
+
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    usn: document.getElementById('usn').value.trim(),
+                    company: document.getElementById('company').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    batch: document.getElementById('batch').value,
+                    status: document.getElementById('status').value,
+                };
+
+                // Validation (if necessary)
+                if (!formData.name || !formData.usn || !formData.company || !formData.batch || !formData.status || !formData.email) {
+                    messageElement.textContent = 'All fields are required.';
+                    messageElement.className = 'message error';
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Add Alumni';
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/settings/addNewAlumini', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        // Success message
+                        messageElement.textContent = data.message || 'Alumni added successfully!';
+                        messageElement.className = 'message success';
+
+                        // Optionally reset the form after successful submission
+                        alumniForm.reset();
+                    } else {
+                        // Error message
+                        messageElement.textContent = data.error || 'Failed to add alumni';
+                        messageElement.className = 'message error';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    messageElement.textContent = 'Network error occurred';
+                    messageElement.className = 'message error';
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Add Alumni';
+                }
+            });
+        }
+    });
+</script>

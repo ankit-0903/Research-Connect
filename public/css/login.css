@@ -1,0 +1,239 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation (left side only) */
+.nav {
+    position: absolute; /* Make the navbar independent of layout flow */
+    width: 40%; /* Extend the navbar only to the left side */
+    background-color: #ffffff; /* White background for the navbar */
+    padding: 1rem;
+}
+
+.logo {
+    height: 40px;
+    margin: 0;
+    display: block;
+}
+/* Main content layout */
+.main {
+    flex: 1;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Updated Hero section with corrected image spacing */
+.hero {
+    flex: 1;
+    padding: 5rem 2rem 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero-image {
+    width: 50%; /* Changed from flex-basis to width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px; /* Control maximum width of the container */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 50%;
+    object-fit: fill;/* Ensure image maintains aspect ratio */
+}
+
+.hero-content {
+    width: 45%; /* Changed from flex-basis to width */
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #2D788D;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-text {
+    color:black;
+    font-family: 600;
+    letter-spacing: 5px;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Right side (Sign-in section) */
+.sign {
+    flex: 1; /* Take up equal space with the hero section */
+    background: #2D788D; /* Distinct darker color for the right section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 100vh; /* Extend to top of the page */
+}
+
+.sign-in-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sign h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2.5rem;
+
+}
+
+.sign h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+  
+
+}
+
+.sign-in-form label {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.sign-in-form input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    font-size: 1rem;
+    background: white;
+    flex-shrink: 0;
+}
+
+.sign-in-form input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+.sign-in-form input::placeholder {
+    color: #2D788D;
+    font-weight: 400;
+    line-height: 100%;
+    font-size: 14px;
+    font-family: 'Poppins';
+}
+.sign-in-button {
+    display: flex;
+    margin-top: 1rem;
+    width: 411px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    position: relative;
+    background-color: #2b6373; /* Background color for the whole button container */
+    border-radius: 16px;
+    cursor: pointer; /* Make the whole div clickable */
+    outline: none; /* Remove the outline when focused */
+    transition: background-color 0.3s ease; /* Add smooth transition for background color */
+}
+
+.sign-in-button .icon-linear {
+    position: relative;
+    width: 18px;
+    height: 18px;
+}
+
+.sign-in-button .button {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    background-color: transparent; /* Button text background transparent */
+    color: #ffffff; /* Button text color */
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.36px;
+    line-height: 28px;
+    white-space: nowrap;
+    cursor: pointer; /* Makes the span clickable */
+}
+
+.sign-in-button:hover {
+    background-color: #2b6373; /* Apply hover effect for the container */
+}
+
+.sign-in-button:focus {
+    outline: none; /* Ensure no outline is displayed on focus */
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .main {
+        flex-direction: column; /* Stack sections on smaller screens */
+    }
+
+    .nav {
+        width: 100%; /* For smaller screens, navbar spans the full width */
+    }
+
+    .hero {
+        padding: 6rem 2rem 2rem; /* Adjust padding to account for full-width navbar */
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin-bottom: 2rem;
+    }
+
+    .sign {
+        padding: 2rem;
+    }
+
+    .sign-in-form {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .sign {
+        padding: 1rem;
+    }
+}

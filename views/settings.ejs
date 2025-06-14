@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - AlumConnect</title>
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-alum">Alum</span>
+                <span class="logo-connect">Connect</span>
+            </div>
+            <nav class="nav">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/settings" class="nav-link">Settings</a>
+                <!-- Add a new link for logout -->
+                <a href="/logout" id="logoutButton">Logout</a>
+                <div class="user-profile">
+                    <img src="images/profileReh.png" alt="Profile" class="profile-image">
+                    <div class="user-info">
+                        <span class="user-name">
+                            <%= user.name %>
+                        </span>
+                        <span class="user-role">
+                            <%= user.role %>
+                        </span>
+                    </div>
+                    <button class="dropdown-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+   
+    <main class="main">
+        <div class="container">
+            <h1 class="page-title">Settings</h1>
+            
+            <div class="sidebar-layout">
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <a href="/settings?sidebar=accountSettings" 
+                           class="sidebar-link <%= activeSidebar === 'accountSettings' ? 'active' : '' %>">
+                           Account Setting
+                        </a>
+                        <a href="/settings?sidebar=addNewAlumni" 
+                           class="sidebar-link <%= activeSidebar === 'addNewAlumni' ? 'active' : '' %>">
+                           Add new Alumni
+                        </a>
+                        <a href="/settings?sidebar=addNewAdmin" 
+                        class="sidebar-link <%= activeSidebar === 'addNewAdmin' ? 'active' : '' %>">
+                        Add new Admin
+                        </a>
+                    </nav>
+                </aside>
+                
+                <section class="content">
+                    <%- include(`./partials/${activeSidebar}`) %>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add form handling script -->
+    <script src="/js/settings.js"></script>
+</body>
+</html>

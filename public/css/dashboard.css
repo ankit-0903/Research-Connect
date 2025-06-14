@@ -1,0 +1,602 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    color: #33475b;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background: linear-gradient(to right, #ffffff, #f8fafc);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+}
+
+/* Download Report Button */
+.download-report-container {
+    display: flex;
+    justify-content: flex-start;
+    /* Aligns button to the left */
+    align-items: center;
+    margin: 20px 0;
+}
+
+.download-report-container {
+    display: flex;
+    justify-content: flex-start;
+    /* Aligns button to the left */
+    align-items: center;
+    margin: 20px 0;
+}
+
+.download-report-button {
+    color: #2D788D;
+    /* Text color */
+    font-size: 16px;
+    /* Font size */
+    padding: 10px 20px;
+    /* Padding */
+    font-weight: 600;
+    /* Bold text */
+    border: 2px solid #2D788D;
+    /* Outline same as text color */
+    border-radius: 50px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    background-color: transparent;
+    /* Transparent background */
+    transition: all 0.3s ease;
+    /* Smooth transitions */
+    outline: none;
+    /* Removes default outline */
+}
+
+.download-report-button:hover {
+    background-color: rgba(45, 120, 141, 0.1);
+    /* Subtle background on hover */
+    transform: translateY(-2px);
+    /* Slight lift on hover */
+}
+
+.download-report-button:active {
+    background-color: rgba(45, 120, 141, 0.15);
+    /* Darker background on click */
+    transform: translateY(0);
+    /* Reset lift */
+}
+
+/* Navigation and profile container */
+.nav-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* Profile picture */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0078d4;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stats container */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    min-height: 200px;
+}
+
+/* Stat card styles */
+.stat-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Changed to center */
+    align-items: center;
+    /* Changed to center */
+    min-height: 180px;
+    align-items: start;
+    padding-right: 120px;
+}
+
+.stat-card h2 {
+    font-size: 1.4rem;
+    color: black;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+    min-height: auto;
+}
+
+.stat-card p {
+    font-size: 2.5rem;
+    color: #33475b;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.stat-logo {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    /* Made height equal to width for consistency */
+    object-fit: contain;
+    flex-shrink: 0;
+    min-width: 80px;
+    min-height: 80px;
+    padding: 10px;
+    /* Added padding for icon */
+}
+
+/* Search and Upload section */
+.search-upload-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.search-upload-row h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #15B5B0;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.search-upload {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-upload input[type="text"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    width: 300px;
+    transition: border-color 0.3s ease;
+}
+
+.search-upload button {
+    padding: 12px 25px;
+    background-color: #15B5B0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Previous styles remain the same until table styles */
+
+/* Table styles */
+.table-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: calc(100vh - 450px);
+    overflow-x: hidden;
+}
+
+/* Table layout */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+/* Table headers and data */
+table th {
+    color: #3394A7;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e1e8ed;
+    white-space: nowrap;
+}
+
+table td {
+    color: #2D788D;
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e1e8ed;
+    white-space: nowrap;
+}
+
+/* Specific column widths */
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 6%;
+    /* Sl. No */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 13%;
+    /* Name */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 10%;
+    /* Company */
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 10%;
+    /* Date Updated */
+}
+
+table th:nth-child(5),
+table td:nth-child(5) {
+    width: 12%;
+    /* Batch */
+}
+
+table th:nth-child(6),
+table td:nth-child(6) {
+    width: 10%;
+    /* Status */
+}
+
+table th:nth-child(7),
+table td:nth-child(7) {
+    width: 12%;
+    /* Request Update */
+}
+
+/* Rest of the previous styles remain the same */
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #0078d4;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #0078d4;
+    color: white;
+}
+
+.pagination a.active {
+    background-color: #0078d4;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-upload input[type="text"] {
+        width: 100%;
+    }
+}
+
+/* Profile picture - updated dimensions */
+.profile-pic {
+    width: 55px;
+    /* Increased from 40px */
+    height: 55px;
+    /* Increased from 40px */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0078d4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Added subtle shadow */
+}
+
+/* Adjust the container to accommodate larger profile picture */
+.nav-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    /* Increased from 20px to give more space */
+}
+
+/* Optional: Add hover effect */
+.profile-pic:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.stat-logo {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 80px;
+    /* Increased from 40px */
+    height: 70px;
+    /* Added explicit height */
+    object-fit: cover;
+    /* This ensures the image maintains its aspect ratio */
+}
+
+/* Modify stat card title for better text wrapping */
+.stat-card h2 {
+    font-size: 1.2rem;
+    color: #8898aa;
+    margin-bottom: 20px;
+    /* Added properties for text wrapping */
+    line-height: 1.3;
+    min-height: 2.6rem;
+    /* Ensures consistent height for all cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Enhanced navigation hover effects */
+nav a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #33475b;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    background-color: #f0f4f8;
+    color: #0078d4;
+}
+
+/* Added underline effect for nav links */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0078d4;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* Enhanced Upload CSV button hover effects */
+.search-upload button {
+    padding: 12px 25px;
+    background-color: #15B5B0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-upload button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(21, 181, 176, 0.3);
+    background-color: #13a29e;
+}
+
+.search-upload button:active {
+    transform: translateY(0);
+}
+
+/* Enhanced search input hover/focus effect */
+.search-upload input[type="text"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-upload input[type="text"]:hover {
+    border-color: #15B5B0;
+}
+
+.search-upload input[type="text"]:focus {
+    outline: none;
+    border-color: #15B5B0;
+    box-shadow: 0 0 0 3px rgba(21, 181, 176, 0.1);
+}
+
+.no-data {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    padding: 20px;
+    font-style: italic;
+}
+.request-update {
+    /* Basic button styling */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    
+    /* Text styling */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3394A7;
+    
+    /* Border and Background */
+    background-color: transparent;
+    border: 1px solid #3394A7;
+    border-radius: 20px;
+    
+    /* Interactive elements */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Hover state */
+.request-update:hover {
+    background-color: rgba(51, 148, 167, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Active state */
+.request-update:active {
+    background-color: rgba(51, 148, 167, 0.15);
+    transform: translateY(0);
+}
+
+/* Focus state */
+.request-update:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(51, 148, 167, 0.2);
+}
+
+/* Arrow icon */
+.request-update::after {
+    content: '>';
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+/* Disabled state */
+.request-update:disabled {
+    color: #cccccc;
+    border-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Container styling (if needed) */
+.request-update-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+}
+/* Styling for class : file input (file choose) */
+.custom-file {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-file-label {
+    background-color: #2D788D;
+    /* Primary color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    /* Rounded button */
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-file-label:hover {
+    background-color: #245f6f;
+    /* Slightly darker shade for hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-file-label:active {
+    background-color: #1a4551;
+    /* Even darker shade for active */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-file input[type="file"] {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #3394A7;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination a:hover {
+    background-color: #15B5B0;
+    color: #fff;
+}
+
+.pagination a.active {
+    background-color: #7adad7;
+    color: #fff;
+    cursor: default;
+}

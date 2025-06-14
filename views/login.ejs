@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+  <!-- Using defer to load the script after HTML -->
+    <title><%= title || "AlumConnect | Sign In" %></title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <img src="/images/Logo.png" alt="AlumConnect Logo" class="logo">
+        </div>
+    </nav>
+    <main class="main">
+        <section class="hero">
+            <div class="hero-image">
+                <img src="/images/landing.svg" alt="Graduates illustration">
+            </div>
+            <div class="hero-content">
+                <h1>Organized Records</h1>
+                <h1>Lasting Connections</h1>
+                <p class="hero-text">
+                    AlumConnect is a secure and efficient platform designed to manage and track alumni records with ease.
+                    Whether it’s maintaining a detailed database, accessing contact information, or keeping track of alumni
+                    achievements, AlumConnect ensures all data is organized and accessible.
+                </p>
+            </div>
+        </section>
+        <section class="sign">
+            <h1>Sign In</h1>
+            <h3>Enter your email and password to sign in</h3>
+            
+            <form id="loginForm" class="sign-in-form">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="mail@simple.com">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Min 8 Characters">
+                
+                <button type="submit" class="sign-in-button">
+                    <img src="/icons/Linear.svg" alt="left arrow" class="icon-linear">
+                    <span class="button">Sign In</span>
+                </button>
+            </form>
+            <p id="error-message" style="color: red; display: none;">Invalid credentials. Please try again.</p>
+        </section>
+    </main>
+    <script src="/js/login.js"></script>
+</body>
+</html>
