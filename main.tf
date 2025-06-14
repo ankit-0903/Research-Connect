@@ -13,7 +13,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "devops-rg-test-2"
-  location = "East US"
+  location = "Canada Central"
 }
 
 resource "azurerm_service_plan" "plan" {
